@@ -15,10 +15,6 @@ git status  # Verifica o estado atual do seu repositório.
 ```
 
 ```bash
-git add <local-do-arquivo>  # Adiciona as mudanças atuais do arquivo indicado ao índice para commit.
-```
-
-```bash
 git add .  # Adiciona todas as mudanças atuais ao índice para commit.
 ```
 
@@ -27,18 +23,10 @@ git diff  # Mostra as diferenças entre arquivos não rastreados e o índice.
 ```
 
 ```bash
-git commit -m "<mensagem>"  # Registra as mudanças no repositório com uma mensagem de commit.
-```
-
-```bash
-git reset --hard HEAD  # Reverte o diretório de trabalho e o índice para o estado do último commit.
+git commit -m "nome do commit"  # Registra as mudanças no repositório com uma mensagem de commit.
 ```
 
 ## Ramificação e Fusão
-
-```bash
-git branch <nome-da-branch>  # Cria uma nova branch.
-```
 
 ```bash
 git branch -M main  # Renomeia a branch atual para "main".
@@ -46,6 +34,10 @@ git branch -M main  # Renomeia a branch atual para "main".
 
 ```bash
 git branch  # Lista todas as branches locais.
+```
+
+```bash
+git branch <nome-da-branch>  # Cria uma nova branch.
 ```
 
 ```bash
@@ -61,7 +53,7 @@ git branch -D <nome-da-branch>  # Exclui a branch especificada.
 ```
 
 ```bash
-git cherry-pick <id-do-commit>  # Aplica as alterações de um commit específico na branch atual.
+git push origin :<nome-da-branch>  # Remove a branch especificada do repositório remoto.
 ```
 
 ## Colaboração
@@ -88,6 +80,46 @@ git log --oneline  # Mostra o histórico de commits em uma linha por commit.
 git log --graph  # Mostra o histórico de commits em formato gráfico.
 ```
 
+```bash
+git show  # Mostra informações sobre um commit específico.
+```
+
+```bash
+git log <nome-da-branch>  # Mostra o histórico de commits de uma branch específica.
+```
+
+## Revertendo Alterações
+
+```bash
+git revert <codigo-do-commit>  # Reverte um commit específico, criando um novo commit.
+```
+
+```bash
+git reset --hard HEAD  # Reverte o diretório de trabalho e o índice para o estado do último commit.
+```
+
+## Stash
+
+```bash
+git stash  # Guarda mudanças temporárias que não estão prontas para commit.
+```
+
+```bash
+git stash pop  # Aplica e remove a última entrada de stash.
+```
+
+```bash
+git stash drop  # Remove a última entrada de stash.
+```
+
+```bash
+git stash clear  # Limpa todas as entradas de stash.
+```
+
+```bash
+git stash push -m "nome da stash"  # Guarda mudanças temporárias com uma mensagem associada.
+```
+
 ## Tags
 
 ```bash
@@ -95,13 +127,39 @@ git tag <nome-da-tag>  # Cria uma tag leve na versão atual.
 ```
 
 ```bash
-git tag -a <nome-da-tag> -m "<mensagem>"  # Cria uma tag anotada com uma mensagem associada.
+git tag <nome-da-tag> <codigo-do-commit>  # Cria uma tag associada a um commit específico.
 ```
 
 ```bash
-git tag -d <nome-da-tag>  # Exclui a tag especificada localmente.
+git tag  # Lista todas as tags no repositório.
+```
+
+```bash
+git push origin <nome-da-tag>  # Envia uma tag específica para o repositório remoto.
 ```
 
 ```bash
 git push origin --tags  # Envia todas as tags locais para o repositório remoto.
+```
+
+```bash
+git tag -d <nome-da-tag>  # Exclui uma tag localmente.
+```
+
+```bash
+git push --delete origin <nome-da-tag>  # Remove uma tag do repositório remoto.
+```
+
+```bash
+git tag -a <nome-da-tag> -m "mensagem da tag"  # Cria uma tag anotada com uma mensagem associada.
+```
+
+```bash
+git tag -v <nome-da-tag>  # Verifica a assinatura de uma tag anotada.
+```
+
+## Cherry-pick
+
+```bash
+git cherry-pick <id-do-commit>  # Aplica as alterações de um commit específico na branch atual.
 ```
