@@ -25,6 +25,10 @@ git add .  # Adiciona todas as mudanças atuais ao índice para commit.
 ```
 
 ```bash
+git reset <nome-do-item>  #Remove item das mudanças atuais do Índice para commit.
+```
+
+```bash
 git diff  # Mostra as diferenças entre arquivos não rastreados e o índice.
 ```
 
@@ -52,6 +56,10 @@ git switch <nome-da-branch>  # Muda para a branch especificada.
 
 ```bash
 git merge <nome-da-branch>  # Funde a branch especificada na branch atual.
+```
+
+```bash
+git cherry-pick <commit-hash>  # Leva o ultimo commit da branch que você queira par a branch atual.
 ```
 
 ```bash
@@ -162,10 +170,4 @@ git tag -a <nome-da-tag> -m "mensagem da tag"  # Cria uma tag anotada com uma me
 
 ```bash
 git tag -v <nome-da-tag>  # Verifica a assinatura de uma tag anotada.
-```
-
-## Cherry-pick
-
-```bash
-git cherry-pick <id-do-commit>  # Aplica as alterações de um commit específico na branch atual.
 ```
